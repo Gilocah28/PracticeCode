@@ -1,39 +1,15 @@
-// const string = (str1) => {
-//     if (str1.length < 3) return str1
-//     return str1.slice(0, 3) + str1.slice(-3)
-// }
-
-// console.log(string('Gibermar'));
-
-// const evenNum = arr => {
-//     let countEven = []
-//     let countOdd = []
-//     for (let i = 0; i < arr.length; i++) {
-//         if (arr[i] % 2 === 0) {
-//             countEven.push(arr[i])
-//         } else {
-//             countOdd.push(arr[i])
-//         }
-//     }
-//     return { Even:countEven, Odd: countOdd }
-// }
-
-
-// const arr = []
-// for (let i = 0; i < 20; i++) {
-//    arr.push(i)
-// }
-// console.log(evenNum(arr));
-
-
-const largestNumber = arr => {
-    let largestNum = arr[0]
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] > largestNum) {
-            largestNum = arr[i]
+const solution = number => {
+    let sum = 0
+    for(let i = 3; i < number; i++){
+        if(i % 3 === 0 || i % 5 === 0){
+            sum += i
         }
     }
-    return largestNum
-}
+    return sum
+};
 
-console.log(largestNumber([100, 12, 24, 4, 6, 7, 0]));
+console.log(solution(0)); // 0
+console.log(solution(-15)); // 0
+console.log(solution(10)); // 23
+console.log(solution(20)); // 78
+console.log(solution(200)); // 9168
